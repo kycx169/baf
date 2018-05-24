@@ -28,6 +28,10 @@ body {
 }
 
 .top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #fff;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, .3);
   &__logo {
@@ -45,6 +49,7 @@ body {
         li {
           display: inline-block;
           position: relative;
+
           &:not(:last-child)::after {
             position: absolute;
             content: "";
@@ -54,6 +59,7 @@ body {
             margin-top: -.5rem;
             border-right: 1px solid #a1a1a1;
           }
+
           a {
             padding: 3.2rem 1.5rem;
             text-decoration: none;
@@ -63,12 +69,80 @@ body {
               color: #3e980a;
             }
           }
+
+          &:hover .sub-menu {
+
+            visibility: unset;
+            margin-top: .3rem;
+            opacity: 1;
+          }
+
+          .sub-menu {
+            position: absolute;
+            margin-top: 4rem;
+            width: 25rem;
+            visibility: hidden;
+            background: linear-gradient(#4cba30,#2a7a18);
+            opacity: 0;
+            transition-duration: .2s;
+
+            li {
+              display: block;
+              transition: all .3s;
+              &:not(:last-child)::after {
+                border-right: unset;
+              }
+
+              a {
+                padding: 1rem 3rem;
+                color: #fff;
+              }
+
+              &:hover {
+                background: #2e2e2e;
+              }
+
+              &:first-child::after {
+                left: 1.5rem;
+                top: -.7rem;
+                width: 0;
+                height: 0;
+                border-left: .6rem solid transparent;
+                border-right: .6rem solid transparent;
+                border-bottom: 1.2rem solid #4cba30;
+              }
+            }
+          }
         }
       }
-
     }
     .cart {
+      padding: 3rem 0;
+      color: #fff;
       float: right;
+      position: relative;
+
+      i {
+        line-height: 2.5rem;
+        background: linear-gradient(#4cb412, #2f7e02);
+        padding: 1.5rem;
+        -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+        clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+      }
+
+      .item-count {
+        position: absolute;
+        text-align: center;
+        top: .8rem;
+        right: -.8rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        border-radius: 2.5rem;
+        background: red;
+      }
     }
+
+
   }
 }
