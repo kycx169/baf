@@ -1,0 +1,74 @@
+@import "normalize";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: SFUIDisplay, Helvetica, Arial, Tahoma, sans-serif;
+}
+
+.clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+.container {
+  max-width: 117rem;
+  margin: 0 auto;
+}
+
+.border-gradient {
+  background: linear-gradient(#4cb212, #3e980a);
+  height: .8rem;
+}
+
+.top-header {
+  background: #fff;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, .3);
+  &__logo {
+    margin: .5rem 0;
+    float: left
+  }
+  &__navigation {
+    float: right;
+    .menu {
+      float: left;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+          display: inline-block;
+          position: relative;
+          &:not(:last-child)::after {
+            position: absolute;
+            content: "";
+            right: -.5rem;
+            top: 50%;
+            height: 1.2rem;
+            margin-top: -.5rem;
+            border-right: 1px solid #a1a1a1;
+          }
+          a {
+            padding: 3.2rem 1.5rem;
+            text-decoration: none;
+            display: block;
+
+            &:hover {
+              color: #3e980a;
+            }
+          }
+        }
+      }
+
+    }
+    .cart {
+      float: right;
+    }
+  }
+}
