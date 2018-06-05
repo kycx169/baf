@@ -244,53 +244,61 @@ body {
           animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
 
 .slider-banner {
-  display: block;
-  width: 100%;
-  top: 9.2rem;
-  position: relative; }
-  .slider-banner__slider img {
-    width: 100%; }
-  .slider-banner__slider .slick-prev {
+  overflow: hidden;
+  top: 9.2rem; }
+  .slider-banner .slider {
+    position: relative; }
+    .slider-banner .slider .caption-wrap {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+      .slider-banner .slider .caption-wrap__caption-box {
+        width: 50%;
+        color: #fff;
+        padding: 3rem 5rem;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: .8rem;
+        box-sizing: border-box;
+        text-align: center; }
+        .slider-banner .slider .caption-wrap__caption-box h3 {
+          font-size: 4.1rem;
+          margin-top: 0; }
+        .slider-banner .slider .caption-wrap__caption-box p {
+          text-align: justify;
+          margin-bottom: 4rem; }
+        .slider-banner .slider .caption-wrap__caption-box .btn-green {
+          padding: 1rem 4rem;
+          border-radius: .6rem;
+          color: #fff;
+          background: linear-gradient(#4db412, #2e7e02);
+          border: none;
+          text-decoration: none; }
+  .slider-banner .slick-prev {
     left: 0;
     background: url("../img/bg-cart.png"); }
-    .slider-banner__slider .slick-prev:before {
+    .slider-banner .slick-prev:before {
       content: " \279E";
       display: inline-block;
+      margin-top: -6px;
       -webkit-transform: rotateY(180deg);
       -moz-transform: rotateY(180deg);
       -o-transform: rotateY(180deg);
       -ms-transform: rotateY(180deg);
       transform: rotateY(180deg); }
-  .slider-banner__slider .slick-next {
+  .slider-banner .slick-next {
     right: 0;
     background: url("../img/bg-cart.png"); }
-    .slider-banner__slider .slick-next:before {
-      content: " \279E"; }
-  .slider-banner__slider .slick-arrow {
+    .slider-banner .slick-next:before {
+      content: " \279E";
+      display: inline-block;
+      margin-top: -6px; }
+  .slider-banner .slick-arrow {
     width: 74px;
     height: 67px;
     z-index: 1;
     background: url("../img/bg-cart.png"); }
-  .slider-banner__intro {
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-12.5%, -50%);
-    text-align: center;
-    width: 25%; }
-    .slider-banner__intro .jumbotro {
-      max-width: 117rem;
-      margin: 0 auto;
-      padding: 3.8rem;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: .8rem; }
-      .slider-banner__intro .jumbotro p {
-        text-align: justify; }
-    .slider-banner__intro .btn-green {
-      padding: 1rem 4rem;
-      border-radius: .6rem;
-      color: #fff;
-      background: linear-gradient(#4db412, #2e7e02);
-      border: none;
-      text-decoration: none; }
+  .slider-banner .slick-dots {
+    bottom: 5px; }
+    .slider-banner .slick-dots .slick-dots li button:before {
+      color: red; }
